@@ -18,7 +18,7 @@ RUN groupadd -r artifactory -g 1001 && useradd -u 1001 -r -g artifactory -d /opt
 # Install the binaries
 RUN mkdir -p ${ARTIFACTORY_HOME} \
   && curl -o /tmp/artifactory.zip  --fail --silent --location --retry 3 ${ARTIFACTORY_URL} \ 
-  && unzip /tmp/artifactory.zip \
+  && unzip /tmp/artifactory.zip -d /tmp \
   && mv /tmp/artifactory-oss-${ARTIFACTORY_VERSION}/* ${ARTIFACTORY_HOME}/ \
   && rm /tmp/artifactory.zip
 
@@ -29,4 +29,4 @@ USER 1001
 
 WORKDIR $ARTIFACTORY_HOME
 
-CMD ["/opt/artifactory/artifactory.sh"]
+CMD ["/opt/artifactory/bin/artifactory.sh"]
