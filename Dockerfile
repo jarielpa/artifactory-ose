@@ -27,6 +27,8 @@ RUN chmod 774 -R ${ARTIFACTORY_HOME}
 
 USER 1001
 
+EXPOSE 8080
+
 WORKDIR $ARTIFACTORY_HOME
 
 CMD ["/opt/artifactory/bin/artifactory.sh"]
