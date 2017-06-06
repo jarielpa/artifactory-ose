@@ -9,7 +9,7 @@ LABEL io.k8s.description="JFrog OSS Repository Manager" \
 
 RUN yum -y install --setopt=tsflags=nodocs java-1.8.0-openjdk-devel.x86_64 maven lsof curl tar && yum clean all
 
-ENV ARTIFACTORY_VERSION 2.2.3
+ENV ARTIFACTORY_VERSION 5.3.1
 ENV ARTIFACTORY_HOME /opt/artifactory
 ENV ARTIFACTORY_URL=https://bintray.com/artifact/download/jfrog/artifactory/jfrog-artifactory-oss-${ARTIFACTORY_VERSION}.zip
 
