@@ -17,9 +17,9 @@ RUN groupadd -r artifactory -g 433 && useradd -u 431 -r -g artifactory -d /opt/a
 
 # Install the binaries
 RUN mkdir -p ${ARTIFACTORY_HOME} \
-  && curl --fail --silent --location --retry 3 \
+  && curl --fail --silent --location --retry 3 -o artifactory.zip  \
     ${ARTIFACTORY_URL} \
-  | gunzip 
+  && gunzip artifactory.zip \
   && mv /tmp/artifactory-oss-${ARTIFACTORY_VERSION}/* ${ARTIFACTORY_HOME}/
 
 RUN chown -R artifactory:0 ${ARTIFACTORY_HOME}
