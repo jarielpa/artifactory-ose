@@ -29,6 +29,8 @@ USER 1001
 
 EXPOSE 8081
 
+VOLUME /opt/artifactory/data
+
 WORKDIR $ARTIFACTORY_HOME
 
 CMD ["/opt/artifactory/bin/artifactory.sh"]
