@@ -29,7 +29,7 @@ USER 1001
 
 EXPOSE 8081
 
-VOLUME /opt/artifactory/data
+VOLUME /opt/artifactory/etc
 
 WORKDIR $ARTIFACTORY_HOME
 
